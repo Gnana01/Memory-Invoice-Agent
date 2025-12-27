@@ -1,0 +1,683 @@
+{
+  "metadata": {
+    "source": "Appendix Sample Data for AI Agent Intern Assignment.pdf",
+    "extractedDate": "2025-12-26",
+    "totalInvoices": 12,
+    "totalPOs": 6,
+    "totalDeliveryNotes": 6
+  },
+  "invoices": [
+    {
+      "invoiceId": "INV-A-001",
+      "vendor": "Supplier GmbH",
+      "invoiceNumber": "INV-2024-001",
+      "invoiceDate": "12.01.2024",
+      "serviceDate": "2024-01-01",
+      "currency": "EUR",
+      "poNumber": "PO-A-050",
+      "netTotal": 2500.0,
+      "taxRate": 0.19,
+      "taxTotal": 475.0,
+      "grossTotal": 2975.0,
+      "lineItems": [
+        {
+          "sku": "WIDGET-001",
+          "description": "Widget",
+          "qty": 100,
+          "unitPrice": 25.0
+        }
+      ],
+      "confidence": 0.78,
+      "rawText": "Rechnungsnr: INV-2024-001\nLeistungsdatum: 01.01.2024\nBestellnr: PO-A-050\n...",
+      "corrections": [
+        {
+          "field": "serviceDate",
+          "from": null,
+          "to": "2024-01-01",
+          "reason": "Leistungsdatum found in rawText"
+        }
+      ],
+      "finalDecision": "approved"
+    },
+    {
+      "invoiceId": "INV-A-002",
+      "vendor": "Supplier GmbH",
+      "invoiceNumber": "INV-2024-002",
+      "invoiceDate": "18.01.2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": "PO-A-050",
+      "netTotal": 2375.0,
+      "taxRate": 0.19,
+      "taxTotal": 451.25,
+      "grossTotal": 2826.25,
+      "lineItems": [
+        {
+          "sku": "WIDGET-001",
+          "description": "Widget",
+          "qty": 95,
+          "unitPrice": 25.0
+        }
+      ],
+      "confidence": 0.72,
+      "rawText": "Rechnungsnr: INV-2024-002\nLeistungsdatum: 15.01.2024\nBestellnr: PO-A-050\nHinweis: Teillieferung\n...",
+      "corrections": [],
+      "finalDecision": "not mentioned"
+    },
+    {
+      "invoiceId": "INV-A-003",
+      "vendor": "Supplier GmbH",
+      "invoiceNumber": "INV-2024-003",
+      "invoiceDate": "25.01.2024",
+      "serviceDate": "2024-01-20",
+      "currency": "EUR",
+      "poNumber": "PO-A-051",
+      "netTotal": 500.0,
+      "taxRate": 0.19,
+      "taxTotal": 95.0,
+      "grossTotal": 595.0,
+      "lineItems": [
+        {
+          "sku": "WIDGET-002",
+          "description": "Widget Pro",
+          "qty": 20,
+          "unitPrice": 25.0
+        }
+      ],
+      "confidence": 0.69,
+      "rawText": "Rechnungsnr: INV-2024-003\nLeistungsdatum: 20.01.2024\nBestellung: (keine Angabe)\nReferenz: Lieferung Januar\n...",
+      "corrections": [
+        {
+          "field": "poNumber",
+          "from": null,
+          "to": "PO-A-051",
+          "reason": "Only matching PO for vendor within 30 days and matching item WIDGET-002"
+        },
+        {
+          "field": "serviceDate",
+          "from": null,
+          "to": "2024-01-20",
+          "reason": "Leistungsdatum found in rawText"
+        }
+      ],
+      "finalDecision": "approved"
+    },
+    {
+      "invoiceId": "INV-A-004",
+      "vendor": "Supplier GmbH",
+      "invoiceNumber": "INV-2024-003",
+      "invoiceDate": "26.01.2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": null,
+      "netTotal": 500.0,
+      "taxRate": 0.19,
+      "taxTotal": 95.0,
+      "grossTotal": 595.0,
+      "lineItems": [
+        {
+          "sku": "WIDGET-002",
+          "description": "Widget Pro",
+          "qty": 20,
+          "unitPrice": 25.0
+        }
+      ],
+      "confidence": 0.63,
+      "rawText": "Rechnungsnr: INV-2024-003\nLeistungsdatum: 20.01.2024\nHinweis: erneute Zusendung\n...",
+      "corrections": [],
+      "finalDecision": "not mentioned",
+      "specialAttribute": "Duplicate submission - same invoice number as INV-A-003 but different date"
+    },
+    {
+      "invoiceId": "INV-B-001",
+      "vendor": "Parts AG",
+      "invoiceNumber": "PA-7781",
+      "invoiceDate": "05-02-2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": "PO-B-110",
+      "netTotal": 2000.0,
+      "taxRate": 0.19,
+      "taxTotal": 380.0,
+      "grossTotal": 2380.0,
+      "lineItems": [
+        {
+          "sku": "BOLT-99",
+          "description": "Bolts",
+          "qty": 200,
+          "unitPrice": 10.0
+        }
+      ],
+      "confidence": 0.74,
+      "rawText": "Invoice No: PA-7781\nPO: PO-B-110\nPrices incl. VAT (MwSt. inkl.)\nTotal: 2380.00 EUR\n...",
+      "corrections": [
+        {
+          "field": "grossTotal",
+          "from": 2400.0,
+          "to": 2380.0,
+          "reason": "Raw text indicates totals already include VAT; extractor overestimated"
+        },
+        {
+          "field": "taxTotal",
+          "from": 400.0,
+          "to": 380.0,
+          "reason": "Recalculated from grossTotal and taxRate"
+        }
+      ],
+      "finalDecision": "approved"
+    },
+    {
+      "invoiceId": "INV-B-002",
+      "vendor": "Parts AG",
+      "invoiceNumber": "PA-7799",
+      "invoiceDate": "20-02-2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": "PO-B-110",
+      "netTotal": 1500.0,
+      "taxRate": 0.19,
+      "taxTotal": 285.0,
+      "grossTotal": 1785.0,
+      "lineItems": [
+        {
+          "sku": "BOLT-99",
+          "description": "Bolts",
+          "qty": 150,
+          "unitPrice": 10.0
+        }
+      ],
+      "confidence": 0.86,
+      "rawText": "Invoice No: PA-7799\nPO: PO-B-110\nMwSt. inkl.\n...",
+      "corrections": [],
+      "finalDecision": "not mentioned"
+    },
+    {
+      "invoiceId": "INV-B-003",
+      "vendor": "Parts AG",
+      "invoiceNumber": "PA-7810",
+      "invoiceDate": "03-03-2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": "PO-B-111",
+      "netTotal": 1000.0,
+      "taxRate": 0.19,
+      "taxTotal": 190.0,
+      "grossTotal": 1190.0,
+      "lineItems": [
+        {
+          "sku": "NUT-10",
+          "description": "Nuts",
+          "qty": 500,
+          "unitPrice": 2.0
+        }
+      ],
+      "confidence": 0.66,
+      "rawText": "Invoice No: PA-7810\nPO: PO-B-111\nCurrency: EUR\n...",
+      "corrections": [
+        {
+          "field": "currency",
+          "from": null,
+          "to": "EUR",
+          "reason": "Currency appears in rawText"
+        }
+      ],
+      "finalDecision": "approved"
+    },
+    {
+      "invoiceId": "INV-B-004",
+      "vendor": "Parts AG",
+      "invoiceNumber": "PA-7810",
+      "invoiceDate": "04-03-2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": "PO-B-111",
+      "netTotal": 1000.0,
+      "taxRate": 0.19,
+      "taxTotal": 190.0,
+      "grossTotal": 1190.0,
+      "lineItems": [
+        {
+          "sku": "NUT-10",
+          "description": "Nuts",
+          "qty": 500,
+          "unitPrice": 2.0
+        }
+      ],
+      "confidence": 0.61,
+      "rawText": "Duplicate submission of PA-7810\n...",
+      "corrections": [],
+      "finalDecision": "not mentioned",
+      "specialAttribute": "Duplicate submission - same invoice number as INV-B-003"
+    },
+    {
+      "invoiceId": "INV-C-001",
+      "vendor": "Freight & Co",
+      "invoiceNumber": "FC-1001",
+      "invoiceDate": "01.03.2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": "PO-C-900",
+      "netTotal": 1000.0,
+      "taxRate": 0.19,
+      "taxTotal": 190.0,
+      "grossTotal": 1190.0,
+      "discountTerms": "2% Skonto within 10 days",
+      "lineItems": [
+        {
+          "sku": null,
+          "description": "Transport charges",
+          "qty": 1,
+          "unitPrice": 1000.0
+        }
+      ],
+      "confidence": 0.79,
+      "rawText": "Invoice: FC-1001\nPO: PO-C-900\n2% Skonto if paid within 10 days\n...",
+      "corrections": [
+        {
+          "field": "discountTerms",
+          "from": null,
+          "to": "2% Skonto within 10 days",
+          "reason": "Skonto terms in rawText"
+        }
+      ],
+      "finalDecision": "approved"
+    },
+    {
+      "invoiceId": "INV-C-002",
+      "vendor": "Freight & Co",
+      "invoiceNumber": "FC-1002",
+      "invoiceDate": "10.03.2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": "PO-C-900",
+      "netTotal": 1000.0,
+      "taxRate": 0.19,
+      "taxTotal": 190.0,
+      "grossTotal": 1190.0,
+      "lineItems": [
+        {
+          "sku": "FREIGHT",
+          "description": "Seefracht / Shipping",
+          "qty": 1,
+          "unitPrice": 1000.0
+        }
+      ],
+      "confidence": 0.73,
+      "rawText": "Invoice: FC-1002\nPO: PO-C-900\nService: Seefracht\n...",
+      "corrections": [
+        {
+          "field": "lineItems[0].sku",
+          "from": null,
+          "to": "FREIGHT",
+          "reason": "Vendor uses descriptions (Seefracht/Shipping) that map to FREIGHT"
+        }
+      ],
+      "finalDecision": "approved"
+    },
+    {
+      "invoiceId": "INV-C-003",
+      "vendor": "Freight & Co",
+      "invoiceNumber": "FC-1003",
+      "invoiceDate": "20.03.2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": "PO-C-901",
+      "netTotal": 1020.0,
+      "taxRate": 0.19,
+      "taxTotal": 193.8,
+      "grossTotal": 1213.8,
+      "specialAttribute": "Slight fuel surcharge applied",
+      "lineItems": [
+        {
+          "sku": null,
+          "description": "Transport charges",
+          "qty": 1,
+          "unitPrice": 1020.0
+        }
+      ],
+      "confidence": 0.77,
+      "rawText": "Invoice: FC-1003\nPO: PO-C-901\nSlight fuel surcharge applied\n...",
+      "corrections": [],
+      "finalDecision": "not mentioned"
+    },
+    {
+      "invoiceId": "INV-C-004",
+      "vendor": "Freight & Co",
+      "invoiceNumber": "FC-1004",
+      "invoiceDate": "28.03.2024",
+      "serviceDate": null,
+      "currency": "EUR",
+      "poNumber": "PO-C-901",
+      "netTotal": 1020.0,
+      "taxRate": 0.19,
+      "taxTotal": 193.8,
+      "grossTotal": 1213.8,
+      "specialAttribute": "Delivery confirmation pending",
+      "lineItems": [
+        {
+          "sku": null,
+          "description": "Transport charges",
+          "qty": 1,
+          "unitPrice": 1020.0
+        }
+      ],
+      "confidence": 0.58,
+      "rawText": "Invoice: FC-1004\nPO: PO-C-901\nNote: delivery confirmation pending\n...",
+      "corrections": [],
+      "finalDecision": "not mentioned"
+    }
+  ],
+  "purchaseOrders": [
+    {
+      "poNumber": "PO-A-050",
+      "vendor": "Supplier GmbH",
+      "date": "2024-01-05",
+      "lineItems": [
+        {
+          "sku": "WIDGET-001",
+          "qty": 100,
+          "unitPrice": 25.0
+        }
+      ]
+    },
+    {
+      "poNumber": "PO-A-051",
+      "vendor": "Supplier GmbH",
+      "date": "2024-01-18",
+      "lineItems": [
+        {
+          "sku": "WIDGET-002",
+          "qty": 20,
+          "unitPrice": 25.0
+        }
+      ]
+    },
+    {
+      "poNumber": "PO-B-110",
+      "vendor": "Parts AG",
+      "date": "2024-02-01",
+      "lineItems": [
+        {
+          "sku": "BOLT-99",
+          "qty": 200,
+          "unitPrice": 10.0
+        }
+      ]
+    },
+    {
+      "poNumber": "PO-B-111",
+      "vendor": "Parts AG",
+      "date": "2024-03-01",
+      "lineItems": [
+        {
+          "sku": "NUT-10",
+          "qty": 500,
+          "unitPrice": 2.0
+        }
+      ]
+    },
+    {
+      "poNumber": "PO-C-900",
+      "vendor": "Freight & Co",
+      "date": "2024-03-01",
+      "lineItems": [
+        {
+          "sku": "FREIGHT",
+          "qty": 1,
+          "unitPrice": 1000.0
+        }
+      ]
+    },
+    {
+      "poNumber": "PO-C-901",
+      "vendor": "Freight & Co",
+      "date": "2024-03-15",
+      "lineItems": [
+        {
+          "sku": "FREIGHT",
+          "qty": 1,
+          "unitPrice": 1000.0
+        }
+      ]
+    }
+  ],
+  "deliveryNotes": [
+    {
+      "dnNumber": "DN-A-123",
+      "vendor": "Supplier GmbH",
+      "poNumber": "PO-A-050",
+      "date": "2024-01-10",
+      "lineItems": [
+        {
+          "sku": "WIDGET-001",
+          "qtyDelivered": 95
+        }
+      ]
+    },
+    {
+      "dnNumber": "DN-A-124",
+      "vendor": "Supplier GmbH",
+      "poNumber": "PO-A-051",
+      "date": "2024-01-22",
+      "lineItems": [
+        {
+          "sku": "WIDGET-002",
+          "qtyDelivered": 20
+        }
+      ]
+    },
+    {
+      "dnNumber": "DN-B-205",
+      "vendor": "Parts AG",
+      "poNumber": "PO-B-110",
+      "date": "2024-02-03",
+      "lineItems": [
+        {
+          "sku": "BOLT-99",
+          "qtyDelivered": 200
+        }
+      ]
+    },
+    {
+      "dnNumber": "DN-B-206",
+      "vendor": "Parts AG",
+      "poNumber": "PO-B-111",
+      "date": "2024-03-02",
+      "lineItems": [
+        {
+          "sku": "NUT-10",
+          "qtyDelivered": 500
+        }
+      ]
+    },
+    {
+      "dnNumber": "DN-C-301",
+      "vendor": "Freight & Co",
+      "poNumber": "PO-C-900",
+      "date": "2024-03-02",
+      "lineItems": [
+        {
+          "sku": "FREIGHT",
+          "qtyDelivered": 1
+        }
+      ]
+    },
+    {
+      "dnNumber": "DN-C-302",
+      "vendor": "Freight & Co",
+      "poNumber": "PO-C-901",
+      "date": "2024-03-18",
+      "lineItems": [
+        {
+          "sku": "FREIGHT",
+          "qtyDelivered": 1
+        }
+      ]
+    }
+  ],
+  "duplicates": [
+    {
+      "type": "Duplicate Invoice Number",
+      "invoices": [
+        "INV-A-003",
+        "INV-A-004"
+      ],
+      "sharedInvoiceNumber": "INV-2024-003",
+      "vendor": "Supplier GmbH",
+      "description": "Same invoice number with different dates (25.01.2024 vs 26.01.2024). INV-A-004 has note 'erneute Zusendung' (resubmission)"
+    },
+    {
+      "type": "Duplicate Invoice Number",
+      "invoices": [
+        "INV-B-003",
+        "INV-B-004"
+      ],
+      "sharedInvoiceNumber": "PA-7810",
+      "vendor": "Parts AG",
+      "description": "Same invoice number with different dates (03-03-2024 vs 04-03-2024). INV-B-004 has note 'Duplicate submission of PA-7810'"
+    }
+  ],
+  "learningScenarios": [
+    {
+      "scenario": "VAT Inclusion Detection",
+      "invoice": "INV-B-001",
+      "issue": "Extractor calculated taxTotal as 400.0 but raw text indicates prices already include VAT",
+      "correction": "Recalculated from grossTotal, corrected taxTotal to 380.0",
+      "pattern": "Watch for phrases like 'Mwst. inkl.', 'Prices incl. VAT', 'VAT already included'"
+    },
+    {
+      "scenario": "Missing PO Matching",
+      "invoice": "INV-A-003",
+      "issue": "No PO number in extracted data, but matching PO available",
+      "correction": "Matched to PO-A-051 based on vendor and item within 30-day window",
+      "pattern": "For missing POs, search all POs by vendor within 30 days with matching line items"
+    },
+    {
+      "scenario": "Missing Service Date",
+      "invoice": "INV-A-001",
+      "issue": "serviceDate was null but found in raw text as 'Leistungsdatum'",
+      "correction": "Extracted from raw text: 2024-01-01",
+      "pattern": "German documents often contain 'Leistungsdatum' for service date"
+    },
+    {
+      "scenario": "Duplicate Invoice Handling",
+      "invoices": [
+        "INV-A-003 vs INV-A-004",
+        "INV-B-003 vs INV-B-004"
+      ],
+      "issue": "Same invoice numbers submitted multiple times with different dates",
+      "correction": "Flagged as duplicates and separate invoice IDs assigned for tracking",
+      "pattern": "When same invoice number appears with different dates, mark as potential duplicate/resubmission"
+    },
+    {
+      "scenario": "Null Currency Field",
+      "invoice": "INV-B-003",
+      "issue": "Currency field was null in extraction",
+      "correction": "Found 'EUR' in rawText",
+      "pattern": "Always check rawText for currency if extracted value is null"
+    },
+    {
+      "scenario": "SKU Mapping from Description",
+      "invoice": "INV-C-002",
+      "issue": "SKU was null for shipping/freight service",
+      "correction": "Mapped 'Seefracht/Shipping' description to standard FREIGHT SKU",
+      "pattern": "For freight vendors, map service descriptions (Seefracht, Shipping, etc.) to FREIGHT SKU"
+    },
+    {
+      "scenario": "Special Terms and Surcharges",
+      "invoices": [
+        "INV-C-001 (Skonto)",
+        "INV-C-003 (fuel surcharge)"
+      ],
+      "issue": "Discount and surcharge terms missed in initial extraction",
+      "correction": "Added discountTerms and specialAttribute fields",
+      "pattern": "Scan rawText for payment terms, surcharges, and special conditions"
+    },
+    {
+      "scenario": "Partial Delivery vs Invoice Qty",
+      "invoice": "INV-A-001",
+      "issue": "PO quantity: 100, Delivery Note (DN-A-123): 95 delivered, Invoice: 100 qty",
+      "correction": "Flag discrepancy for reconciliation",
+      "pattern": "Compare invoice line item quantities against delivery notes"
+    }
+  ],
+  "summary": {
+    "vendors": [
+      {
+        "name": "Supplier GmbH",
+        "invoiceIds": [
+          "INV-A-001",
+          "INV-A-002",
+          "INV-A-003",
+          "INV-A-004"
+        ],
+        "totalInvoices": 4,
+        "poNumbers": [
+          "PO-A-050",
+          "PO-A-051"
+        ]
+      },
+      {
+        "name": "Parts AG",
+        "invoiceIds": [
+          "INV-B-001",
+          "INV-B-002",
+          "INV-B-003",
+          "INV-B-004"
+        ],
+        "totalInvoices": 4,
+        "poNumbers": [
+          "PO-B-110",
+          "PO-B-111"
+        ]
+      },
+      {
+        "name": "Freight & Co",
+        "invoiceIds": [
+          "INV-C-001",
+          "INV-C-002",
+          "INV-C-003",
+          "INV-C-004"
+        ],
+        "totalInvoices": 4,
+        "poNumbers": [
+          "PO-C-900",
+          "PO-C-901"
+        ]
+      }
+    ],
+    "dataQualityIssues": [
+      {
+        "type": "Duplicate Invoice Numbers",
+        "count": 2,
+        "affectedInvoices": [
+          "INV-A-003/INV-A-004",
+          "INV-B-003/INV-B-004"
+        ]
+      },
+      {
+        "type": "Low Confidence Scores",
+        "affectedInvoices": [
+          "INV-A-004 (0.63)",
+          "INV-B-003 (0.66)",
+          "INV-C-004 (0.58)"
+        ]
+      },
+      {
+        "type": "Missing or Null Fields",
+        "affectedInvoices": [
+          "INV-A-002 (serviceDate)",
+          "INV-A-003 (serviceDate initially)",
+          "INV-B-003 (currency initially)",
+          "INV-C-003/INV-C-004 (sku, serviceDate)"
+        ]
+      },
+      {
+        "type": "Quantity Discrepancies",
+        "affectedInvoices": [
+          "INV-A-001: PO 100 vs Delivery 95"
+        ]
+      }
+    ]
+  }
+}
