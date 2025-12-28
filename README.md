@@ -444,7 +444,7 @@ npm run build
 ```
 Memory_Driven_Agent/
 ├── src/
-│   ├── index.ts         # Main processing pipeline with recall/apply/decide/learn
+│   ├── demo.ts          # Main processing pipeline with recall/apply/decide/learn
 │   ├── db.ts            # SQLite database management (MemoryDB class)
 │   ├── utils.ts         # Utility functions for detection & pattern matching
 │   │   ├── detectDuplicate()          # Vendor + invoiceNumber + date matching
