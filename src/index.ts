@@ -93,7 +93,7 @@ interface ProcessingReport {
 const memoryDB = new MemoryDB("memory.db");
 
 // ===== Module Initialization =====
-const processedInvoices: Set<string> = new Set();
+const processedInvoices: Array<{ invoiceId: string; vendor: string; invoiceNumber: string; invoiceDate: string }> = [];
 let memoryStore: Memory[] = [];
 
 // Load memories from persistent storage on startup
@@ -197,16 +197,9 @@ function processInvoice(
     let isDuplicate = false;
     let duplicateOf: string | undefined;
     if (invoiceId && invoiceDate) {
-        const previousInvoices = Array.from(processedInvoices).map((key) => ({
-            invoiceId: key,
-            vendor: invoice.vendor,
-            invoiceNumber: invoice.invoiceNumber,
-            invoiceDate,
-        }));
-
         const duplicate = detectDuplicate(
             { invoiceId, vendor: invoice.vendor, invoiceNumber: invoice.invoiceNumber, invoiceDate },
-            previousInvoices
+            processedInvoices
         );
 
         if (duplicate) {
@@ -394,7 +387,12 @@ function processAllInvoices(): ProcessingReport[] {
         );
         
         // Track processed invoice
-        processedInvoices.add(rawInv.invoiceId);
+        processedInvoices.push({
+            invoiceId: rawInv.invoiceId,
+            vendor: rawInv.vendor,
+            invoiceNumber: rawInv.invoiceNumber,
+            invoiceDate: rawInv.invoiceDate,
+        });
         
         // Determine action based on confidence and finalDecision
         let action: "auto-applied" | "human-approved" | "human-rejected" | "requires-review";

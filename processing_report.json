@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-27T10:18:56.724Z",
+  "timestamp": "2025-12-28T04:44:39.337Z",
   "reports": [
     {
       "invoiceId": "INV-A-001",
@@ -19,36 +19,31 @@
             "reason": "Leistungsdatum found in rawText"
           }
         ],
-        "requiresHumanReview": true,
-        "reasoning": "Used 0 memories with average confidence 0.60. Found 1 potential corrections.",
-        "confidenceScore": 0.6,
+        "requiresHumanReview": false,
+        "reasoning": "Used 9 memories with average confidence 0.85. Found 1 potential corrections.",
+        "confidenceScore": 0.85,
         "memoryUpdates": [
           "Learned from approved correction: serviceDate: null -> 2024-01-01"
         ],
         "auditTrail": [
           {
-            "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.704Z",
-            "details": "Duplicate detected: same invoice number and vendor within 5 days. Original: INV-A-001"
-          },
-          {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.704Z",
+            "timestamp": "2025-12-28T04:44:39.280Z",
             "details": "Looking for memory for vendor Supplier GmbH"
           },
           {
             "step": "apply",
-            "timestamp": "2025-12-27T10:18:56.704Z",
+            "timestamp": "2025-12-28T04:44:39.281Z",
             "details": "Found 1 potential corrections to review"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.704Z",
-            "details": "Duplicate detected, requires review."
+            "timestamp": "2025-12-28T04:44:39.281Z",
+            "details": "High confidence (0.85), auto-applying corrections."
           },
           {
             "step": "fix",
-            "timestamp": "2025-12-27T10:18:56.704Z",
+            "timestamp": "2025-12-28T04:44:39.281Z",
             "details": "Fixed serviceDate: 2024-01-01 -> 2024-01-01 (Leistungsdatum found in rawText)"
           }
         ],
@@ -60,8 +55,7 @@
             "reason": "Leistungsdatum found in rawText"
           }
         ],
-        "isDuplicate": true,
-        "duplicateOf": "INV-A-001",
+        "isDuplicate": false,
         "detectedSkontoTerms": [],
         "detectedVATInfo": {
           "vatIncluded": false,
@@ -70,7 +64,7 @@
         },
         "recoveredCurrency": "EUR"
       },
-      "action": "human-approved"
+      "action": "auto-applied"
     },
     {
       "invoiceId": "INV-A-002",
@@ -84,18 +78,18 @@
         },
         "proposedCorrections": [],
         "requiresHumanReview": true,
-        "reasoning": "Used 1 memories with average confidence 0.00. Found 0 potential corrections.",
+        "reasoning": "Used 10 memories with average confidence 0.00. Found 0 potential corrections.",
         "confidenceScore": 0,
         "memoryUpdates": [],
         "auditTrail": [
           {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.707Z",
+            "timestamp": "2025-12-28T04:44:39.287Z",
             "details": "Looking for memory for vendor Supplier GmbH"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.707Z",
+            "timestamp": "2025-12-28T04:44:39.287Z",
             "details": "Low confidence (0.00), requesting human intervention."
           }
         ],
@@ -135,44 +129,38 @@
             "reason": "Leistungsdatum found in rawText"
           }
         ],
-        "requiresHumanReview": true,
-        "reasoning": "Used 1 memories with average confidence 0.72. Found 2 potential corrections.",
-        "confidenceScore": 0.725,
+        "requiresHumanReview": false,
+        "reasoning": "Used 10 memories with average confidence 0.85. Found 2 potential corrections.",
+        "confidenceScore": 0.85,
         "memoryUpdates": [
           "Learned from approved correction: poNumber: null -> PO-A-051",
-          "Learned from approved correction: serviceDate: null -> 2024-01-20",
-          "Increased confidence of memory e9cf0c84-d705-4616-98d1-4ca02ea826fe to 0.95"
+          "Learned from approved correction: serviceDate: null -> 2024-01-20"
         ],
         "auditTrail": [
           {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.708Z",
+            "timestamp": "2025-12-28T04:44:39.287Z",
             "details": "Looking for memory for vendor Supplier GmbH"
           },
           {
             "step": "apply",
-            "timestamp": "2025-12-27T10:18:56.708Z",
+            "timestamp": "2025-12-28T04:44:39.287Z",
             "details": "Found 2 potential corrections to review"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.708Z",
-            "details": "Low confidence (0.72), requesting human intervention."
+            "timestamp": "2025-12-28T04:44:39.287Z",
+            "details": "High confidence (0.85), auto-applying corrections."
           },
           {
             "step": "fix",
-            "timestamp": "2025-12-27T10:18:56.708Z",
+            "timestamp": "2025-12-28T04:44:39.287Z",
             "details": "Fixed poNumber: PO-A-051 -> PO-A-051 (Only matching PO for vendor within 30 days and matching item WIDGET-002)"
           },
           {
             "step": "fix",
-            "timestamp": "2025-12-27T10:18:56.708Z",
+            "timestamp": "2025-12-28T04:44:39.287Z",
             "details": "Fixed serviceDate: 2024-01-20 -> 2024-01-20 (Leistungsdatum found in rawText)"
-          },
-          {
-            "step": "learn",
-            "timestamp": "2025-12-27T10:18:56.717Z",
-            "details": "Human approved, Memory updated."
           }
         ],
         "appliedCorrections": [
@@ -198,7 +186,7 @@
         },
         "recoveredCurrency": "EUR"
       },
-      "action": "human-approved"
+      "action": "auto-applied"
     },
     {
       "invoiceId": "INV-A-004",
@@ -212,18 +200,18 @@
         },
         "proposedCorrections": [],
         "requiresHumanReview": true,
-        "reasoning": "Used 3 memories with average confidence 0.00. Found 0 potential corrections.",
+        "reasoning": "Used 12 memories with average confidence 0.00. Found 0 potential corrections.",
         "confidenceScore": 0,
         "memoryUpdates": [],
         "auditTrail": [
           {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.717Z",
+            "timestamp": "2025-12-28T04:44:39.298Z",
             "details": "Looking for memory for vendor Supplier GmbH"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.717Z",
+            "timestamp": "2025-12-28T04:44:39.298Z",
             "details": "Low confidence (0.00), requesting human intervention."
           }
         ],
@@ -247,7 +235,9 @@
           "vendor": "Parts AG",
           "invoiceNumber": "PA-7781",
           "serviceDate": null,
-          "poNumber": "PO-B-110"
+          "poNumber": "PO-B-110",
+          "grossTotal": 2380,
+          "taxTotal": 380
         },
         "proposedCorrections": [
           {
@@ -263,37 +253,56 @@
             "reason": "Recalculated from grossTotal and taxRate"
           }
         ],
-        "requiresHumanReview": true,
-        "reasoning": "Used 0 memories with average confidence 0.60. Found 2 potential corrections.",
-        "confidenceScore": 0.6,
+        "requiresHumanReview": false,
+        "reasoning": "Used 3 memories with average confidence 0.95. Found 2 potential corrections.",
+        "confidenceScore": 0.95,
         "memoryUpdates": [
-          "Detected VAT info: included (19%)"
+          "Detected VAT info: included (19%)",
+          "Learned from approved correction: grossTotal: 2400 -> 2380",
+          "Learned from approved correction: taxTotal: 400 -> 380"
         ],
         "auditTrail": [
           {
-            "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.718Z",
-            "details": "Duplicate detected: same invoice number and vendor within 5 days. Original: INV-A-001"
-          },
-          {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.718Z",
+            "timestamp": "2025-12-28T04:44:39.298Z",
             "details": "Looking for memory for vendor Parts AG"
           },
           {
             "step": "apply",
-            "timestamp": "2025-12-27T10:18:56.718Z",
+            "timestamp": "2025-12-28T04:44:39.298Z",
             "details": "Found 2 potential corrections to review"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.718Z",
-            "details": "Duplicate detected, requires review."
+            "timestamp": "2025-12-28T04:44:39.298Z",
+            "details": "High confidence (0.95), auto-applying corrections."
+          },
+          {
+            "step": "fix",
+            "timestamp": "2025-12-28T04:44:39.298Z",
+            "details": "Fixed grossTotal: undefined -> 2380 (Raw text indicates totals already include VAT; extractor overestimated)"
+          },
+          {
+            "step": "fix",
+            "timestamp": "2025-12-28T04:44:39.298Z",
+            "details": "Fixed taxTotal: undefined -> 380 (Recalculated from grossTotal and taxRate)"
           }
         ],
-        "appliedCorrections": [],
-        "isDuplicate": true,
-        "duplicateOf": "INV-A-001",
+        "appliedCorrections": [
+          {
+            "field": "grossTotal",
+            "from": 2400,
+            "to": 2380,
+            "reason": "Raw text indicates totals already include VAT; extractor overestimated"
+          },
+          {
+            "field": "taxTotal",
+            "from": 400,
+            "to": 380,
+            "reason": "Recalculated from grossTotal and taxRate"
+          }
+        ],
+        "isDuplicate": false,
         "detectedSkontoTerms": [],
         "detectedVATInfo": {
           "vatIncluded": true,
@@ -302,7 +311,7 @@
         },
         "recoveredCurrency": "EUR"
       },
-      "action": "requires-review"
+      "action": "auto-applied"
     },
     {
       "invoiceId": "INV-B-002",
@@ -316,7 +325,7 @@
         },
         "proposedCorrections": [],
         "requiresHumanReview": true,
-        "reasoning": "Used 0 memories with average confidence 0.00. Found 0 potential corrections.",
+        "reasoning": "Used 5 memories with average confidence 0.00. Found 0 potential corrections.",
         "confidenceScore": 0,
         "memoryUpdates": [
           "Detected VAT info: included (19%)"
@@ -324,12 +333,12 @@
         "auditTrail": [
           {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.718Z",
+            "timestamp": "2025-12-28T04:44:39.310Z",
             "details": "Looking for memory for vendor Parts AG"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.718Z",
+            "timestamp": "2025-12-28T04:44:39.310Z",
             "details": "Low confidence (0.00), requesting human intervention."
           }
         ],
@@ -353,7 +362,8 @@
           "vendor": "Parts AG",
           "invoiceNumber": "PA-7810",
           "serviceDate": null,
-          "poNumber": "PO-B-111"
+          "poNumber": "PO-B-111",
+          "currency": "EUR"
         },
         "proposedCorrections": [
           {
@@ -363,35 +373,43 @@
             "reason": "Currency appears in rawText"
           }
         ],
-        "requiresHumanReview": true,
-        "reasoning": "Used 0 memories with average confidence 0.60. Found 1 potential corrections.",
-        "confidenceScore": 0.6,
-        "memoryUpdates": [],
+        "requiresHumanReview": false,
+        "reasoning": "Used 5 memories with average confidence 0.85. Found 1 potential corrections.",
+        "confidenceScore": 0.85,
+        "memoryUpdates": [
+          "Learned from approved correction: currency: null -> EUR"
+        ],
         "auditTrail": [
           {
-            "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.719Z",
-            "details": "Duplicate detected: same invoice number and vendor within 5 days. Original: INV-A-001"
-          },
-          {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.719Z",
+            "timestamp": "2025-12-28T04:44:39.311Z",
             "details": "Looking for memory for vendor Parts AG"
           },
           {
             "step": "apply",
-            "timestamp": "2025-12-27T10:18:56.719Z",
+            "timestamp": "2025-12-28T04:44:39.311Z",
             "details": "Found 1 potential corrections to review"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.719Z",
-            "details": "Duplicate detected, requires review."
+            "timestamp": "2025-12-28T04:44:39.311Z",
+            "details": "High confidence (0.85), auto-applying corrections."
+          },
+          {
+            "step": "fix",
+            "timestamp": "2025-12-28T04:44:39.311Z",
+            "details": "Fixed currency: undefined -> EUR (Currency appears in rawText)"
           }
         ],
-        "appliedCorrections": [],
-        "isDuplicate": true,
-        "duplicateOf": "INV-A-001",
+        "appliedCorrections": [
+          {
+            "field": "currency",
+            "from": null,
+            "to": "EUR",
+            "reason": "Currency appears in rawText"
+          }
+        ],
+        "isDuplicate": false,
         "detectedSkontoTerms": [],
         "detectedVATInfo": {
           "vatIncluded": false,
@@ -400,7 +418,7 @@
         },
         "recoveredCurrency": "EUR"
       },
-      "action": "requires-review"
+      "action": "auto-applied"
     },
     {
       "invoiceId": "INV-B-004",
@@ -414,29 +432,23 @@
         },
         "proposedCorrections": [],
         "requiresHumanReview": true,
-        "reasoning": "Used 0 memories with average confidence 0.00. Found 0 potential corrections.",
+        "reasoning": "Used 6 memories with average confidence 0.00. Found 0 potential corrections.",
         "confidenceScore": 0,
         "memoryUpdates": [],
         "auditTrail": [
           {
-            "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.719Z",
-            "details": "Duplicate detected: same invoice number and vendor within 5 days. Original: INV-A-001"
-          },
-          {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.719Z",
+            "timestamp": "2025-12-28T04:44:39.315Z",
             "details": "Looking for memory for vendor Parts AG"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.719Z",
-            "details": "Duplicate detected, requires review."
+            "timestamp": "2025-12-28T04:44:39.315Z",
+            "details": "Low confidence (0.00), requesting human intervention."
           }
         ],
         "appliedCorrections": [],
-        "isDuplicate": true,
-        "duplicateOf": "INV-A-001",
+        "isDuplicate": false,
         "detectedSkontoTerms": [],
         "detectedVATInfo": {
           "vatIncluded": false,
@@ -455,7 +467,8 @@
           "vendor": "Freight & Co",
           "invoiceNumber": "FC-1001",
           "serviceDate": null,
-          "poNumber": "PO-C-900"
+          "poNumber": "PO-C-900",
+          "discountTerms": "2% Skonto within 10 days"
         },
         "proposedCorrections": [
           {
@@ -465,35 +478,43 @@
             "reason": "Skonto terms in rawText"
           }
         ],
-        "requiresHumanReview": true,
-        "reasoning": "Used 0 memories with average confidence 0.60. Found 1 potential corrections.",
-        "confidenceScore": 0.6,
-        "memoryUpdates": [],
+        "requiresHumanReview": false,
+        "reasoning": "Used 2 memories with average confidence 0.95. Found 1 potential corrections.",
+        "confidenceScore": 0.95,
+        "memoryUpdates": [
+          "Learned from approved correction: discountTerms: null -> 2% Skonto within 10 days"
+        ],
         "auditTrail": [
           {
-            "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.719Z",
-            "details": "Duplicate detected: same invoice number and vendor within 5 days. Original: INV-A-001"
-          },
-          {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.719Z",
+            "timestamp": "2025-12-28T04:44:39.316Z",
             "details": "Looking for memory for vendor Freight & Co"
           },
           {
             "step": "apply",
-            "timestamp": "2025-12-27T10:18:56.719Z",
+            "timestamp": "2025-12-28T04:44:39.316Z",
             "details": "Found 1 potential corrections to review"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.719Z",
-            "details": "Duplicate detected, requires review."
+            "timestamp": "2025-12-28T04:44:39.316Z",
+            "details": "High confidence (0.95), auto-applying corrections."
+          },
+          {
+            "step": "fix",
+            "timestamp": "2025-12-28T04:44:39.316Z",
+            "details": "Fixed discountTerms: undefined -> 2% Skonto within 10 days (Skonto terms in rawText)"
           }
         ],
-        "appliedCorrections": [],
-        "isDuplicate": true,
-        "duplicateOf": "INV-A-001",
+        "appliedCorrections": [
+          {
+            "field": "discountTerms",
+            "from": null,
+            "to": "2% Skonto within 10 days",
+            "reason": "Skonto terms in rawText"
+          }
+        ],
+        "isDuplicate": false,
         "detectedSkontoTerms": [],
         "detectedVATInfo": {
           "vatIncluded": false,
@@ -502,7 +523,7 @@
         },
         "recoveredCurrency": "EUR"
       },
-      "action": "requires-review"
+      "action": "auto-applied"
     },
     {
       "invoiceId": "INV-C-002",
@@ -512,7 +533,8 @@
           "vendor": "Freight & Co",
           "invoiceNumber": "FC-1002",
           "serviceDate": null,
-          "poNumber": "PO-C-900"
+          "poNumber": "PO-C-900",
+          "lineItems[0].sku": "FREIGHT"
         },
         "proposedCorrections": [
           {
@@ -522,35 +544,43 @@
             "reason": "Vendor uses descriptions (Seefracht/Shipping) that map to FREIGHT"
           }
         ],
-        "requiresHumanReview": true,
-        "reasoning": "Used 0 memories with average confidence 0.60. Found 1 potential corrections.",
-        "confidenceScore": 0.6,
-        "memoryUpdates": [],
+        "requiresHumanReview": false,
+        "reasoning": "Used 3 memories with average confidence 0.85. Found 1 potential corrections.",
+        "confidenceScore": 0.85,
+        "memoryUpdates": [
+          "Learned from approved correction: lineItems[0].sku: null -> FREIGHT"
+        ],
         "auditTrail": [
           {
-            "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.719Z",
-            "details": "Duplicate detected: same invoice number and vendor within 5 days. Original: INV-A-001"
-          },
-          {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.719Z",
+            "timestamp": "2025-12-28T04:44:39.322Z",
             "details": "Looking for memory for vendor Freight & Co"
           },
           {
             "step": "apply",
-            "timestamp": "2025-12-27T10:18:56.719Z",
+            "timestamp": "2025-12-28T04:44:39.322Z",
             "details": "Found 1 potential corrections to review"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.719Z",
-            "details": "Duplicate detected, requires review."
+            "timestamp": "2025-12-28T04:44:39.322Z",
+            "details": "High confidence (0.85), auto-applying corrections."
+          },
+          {
+            "step": "fix",
+            "timestamp": "2025-12-28T04:44:39.322Z",
+            "details": "Fixed lineItems[0].sku: undefined -> FREIGHT (Vendor uses descriptions (Seefracht/Shipping) that map to FREIGHT)"
           }
         ],
-        "appliedCorrections": [],
-        "isDuplicate": true,
-        "duplicateOf": "INV-A-001",
+        "appliedCorrections": [
+          {
+            "field": "lineItems[0].sku",
+            "from": null,
+            "to": "FREIGHT",
+            "reason": "Vendor uses descriptions (Seefracht/Shipping) that map to FREIGHT"
+          }
+        ],
+        "isDuplicate": false,
         "detectedSkontoTerms": [],
         "detectedVATInfo": {
           "vatIncluded": false,
@@ -559,7 +589,7 @@
         },
         "recoveredCurrency": "EUR"
       },
-      "action": "requires-review"
+      "action": "auto-applied"
     },
     {
       "invoiceId": "INV-C-003",
@@ -573,18 +603,18 @@
         },
         "proposedCorrections": [],
         "requiresHumanReview": true,
-        "reasoning": "Used 0 memories with average confidence 0.00. Found 0 potential corrections.",
+        "reasoning": "Used 4 memories with average confidence 0.00. Found 0 potential corrections.",
         "confidenceScore": 0,
         "memoryUpdates": [],
         "auditTrail": [
           {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.720Z",
+            "timestamp": "2025-12-28T04:44:39.326Z",
             "details": "Looking for memory for vendor Freight & Co"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.720Z",
+            "timestamp": "2025-12-28T04:44:39.326Z",
             "details": "Low confidence (0.00), requesting human intervention."
           }
         ],
@@ -612,18 +642,18 @@
         },
         "proposedCorrections": [],
         "requiresHumanReview": true,
-        "reasoning": "Used 0 memories with average confidence 0.00. Found 0 potential corrections.",
+        "reasoning": "Used 4 memories with average confidence 0.00. Found 0 potential corrections.",
         "confidenceScore": 0,
         "memoryUpdates": [],
         "auditTrail": [
           {
             "step": "recall",
-            "timestamp": "2025-12-27T10:18:56.720Z",
+            "timestamp": "2025-12-28T04:44:39.327Z",
             "details": "Looking for memory for vendor Freight & Co"
           },
           {
             "step": "decide",
-            "timestamp": "2025-12-27T10:18:56.720Z",
+            "timestamp": "2025-12-28T04:44:39.327Z",
             "details": "Low confidence (0.00), requesting human intervention."
           }
         ],
@@ -642,6 +672,127 @@
   ],
   "memoryStore": [
     {
+      "id": "49b47fb8-2484-429e-b061-a7d08c7f7ea7",
+      "vendor": "Freight & Co",
+      "type": "correction",
+      "pattern": "Skonto terms in rawText",
+      "action": "discountTerms: null -> 2% Skonto within 10 days",
+      "confidence": 0.95,
+      "approved": 1,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "112227db-3efe-43bf-b2f2-9ec76184750c",
+      "vendor": "Freight & Co",
+      "type": "correction",
+      "pattern": "Vendor uses descriptions (Seefracht/Shipping) that map to FREIGHT",
+      "action": "lineItems[0].sku: null -> FREIGHT",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "090ad5db-74ed-43b9-a720-6f4d03c88bcb",
+      "vendor": "Parts AG",
+      "type": "correction",
+      "pattern": "Recalculated from grossTotal and taxRate",
+      "action": "taxTotal: 400 -> 380",
+      "confidence": 0.95,
+      "approved": 1,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "b0e36165-851d-4bb5-9044-7951b1804673",
+      "vendor": "Parts AG",
+      "type": "correction",
+      "pattern": "Raw text indicates totals already include VAT; extractor overestimated",
+      "action": "grossTotal: 2400 -> 2380",
+      "confidence": 0.95,
+      "approved": 1,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "74a0604b-b815-44cd-8996-84e5713eb388",
+      "vendor": "Parts AG",
+      "type": "correction",
+      "pattern": "Currency appears in rawText",
+      "action": "currency: null -> EUR",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "d0fa2443-b232-4c75-9018-d5ade687251f",
+      "vendor": "Supplier GmbH",
+      "type": "correction",
+      "pattern": "Leistungsdatum found in rawText",
+      "action": "serviceDate: null -> 2024-01-20",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "7dbb8c27-d4ce-4e85-826d-f2887047be99",
+      "vendor": "Supplier GmbH",
+      "type": "correction",
+      "pattern": "Only matching PO for vendor within 30 days and matching item WIDGET-002",
+      "action": "poNumber: null -> PO-A-051",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "6961b15c-ef02-458a-90ff-d43924c4288a",
+      "vendor": "Supplier GmbH",
+      "type": "correction",
+      "pattern": "Leistungsdatum found in rawText",
+      "action": "serviceDate: null -> 2024-01-01",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "b375a9f1-bd42-40a5-a452-3bb6826f6512",
+      "vendor": "Supplier GmbH",
+      "type": "correction",
+      "pattern": "Leistungsdatum found in rawText",
+      "action": "serviceDate: null -> 2024-01-20",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "278ae145-983d-4895-8cc6-fa45e6f697ba",
+      "vendor": "Supplier GmbH",
+      "type": "correction",
+      "pattern": "Only matching PO for vendor within 30 days and matching item WIDGET-002",
+      "action": "poNumber: null -> PO-A-051",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "871703a3-39bd-41a6-97de-47ab29f95fb7",
+      "vendor": "Supplier GmbH",
+      "type": "correction",
+      "pattern": "Leistungsdatum found in rawText",
+      "action": "serviceDate: null -> 2024-01-01",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
       "id": "e9cf0c84-d705-4616-98d1-4ca02ea826fe",
       "vendor": "Supplier GmbH",
       "type": "correction",
@@ -649,6 +800,17 @@
       "action": "serviceDate: null -> 2024-01-01",
       "confidence": 0.95,
       "approved": 1,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "87c85063-b05e-49f0-a7d1-4568fa277c62",
+      "vendor": "Supplier GmbH",
+      "type": "correction",
+      "pattern": "Leistungsdatum found in rawText",
+      "action": "serviceDate: null -> 2024-01-20",
+      "confidence": 0.85,
+      "approved": 0,
       "rejected": 0,
       "resolutionType": "approved"
     },
@@ -664,11 +826,88 @@
       "resolutionType": "approved"
     },
     {
-      "id": "87c85063-b05e-49f0-a7d1-4568fa277c62",
+      "id": "638984a9-552a-4b76-b3b1-7f7902d6ac02",
+      "vendor": "Supplier GmbH",
+      "type": "correction",
+      "pattern": "Leistungsdatum found in rawText",
+      "action": "serviceDate: null -> 2024-01-01",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "e9c41d87-e716-4a46-800c-63d843cba1e9",
+      "vendor": "Supplier GmbH",
+      "type": "correction",
+      "pattern": "Only matching PO for vendor within 30 days and matching item WIDGET-002",
+      "action": "poNumber: null -> PO-A-051",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "48c339f0-0ce3-4187-8715-e8ac46370c27",
       "vendor": "Supplier GmbH",
       "type": "correction",
       "pattern": "Leistungsdatum found in rawText",
       "action": "serviceDate: null -> 2024-01-20",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "c75bb8a5-5834-4dad-a292-ebd12e80688c",
+      "vendor": "Parts AG",
+      "type": "correction",
+      "pattern": "Raw text indicates totals already include VAT; extractor overestimated",
+      "action": "grossTotal: 2400 -> 2380",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "d3252d1c-07aa-4f21-9b18-997d195d15cb",
+      "vendor": "Parts AG",
+      "type": "correction",
+      "pattern": "Recalculated from grossTotal and taxRate",
+      "action": "taxTotal: 400 -> 380",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "b3ea1983-ecf4-489b-85ba-045123d66664",
+      "vendor": "Parts AG",
+      "type": "correction",
+      "pattern": "Currency appears in rawText",
+      "action": "currency: null -> EUR",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "2ab4a027-a310-4e44-8381-400d1ab39dba",
+      "vendor": "Freight & Co",
+      "type": "correction",
+      "pattern": "Skonto terms in rawText",
+      "action": "discountTerms: null -> 2% Skonto within 10 days",
+      "confidence": 0.85,
+      "approved": 0,
+      "rejected": 0,
+      "resolutionType": "approved"
+    },
+    {
+      "id": "d78c2c2c-3be6-4eca-b24a-37958e60d6ac",
+      "vendor": "Freight & Co",
+      "type": "correction",
+      "pattern": "Vendor uses descriptions (Seefracht/Shipping) that map to FREIGHT",
+      "action": "lineItems[0].sku: null -> FREIGHT",
       "confidence": 0.85,
       "approved": 0,
       "rejected": 0,
