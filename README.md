@@ -242,58 +242,6 @@ Each invoice processing returns this JSON structure:
 
 ---
 
-## Grading Criteria Coverage (All 7 Criteria Implemented & Verified)
-
-### ✅ Criterion 1: Supplier GmbH - Leistungsdatum Mapping
-- **Implementation**: Detects "Leistungsdatum" field in German invoices
-- **Result**: Maps to `serviceDate` with growing confidence
-- **Demonstrated**: INV-A-001 (confidence 0.95), INV-A-003 (confidence 0.85)
-- **Memory**: Stored with vendor-specific pattern tracking
-- **Status**: ✅ Working - Auto-applied when confidence ≥ 0.75
-
-### ✅ Criterion 2: Supplier GmbH - PO-A-051 Matching
-- **Implementation**: Matches PO based on vendor + item within 30-day window
-- **Result**: INV-A-003 auto-matches to single available PO
-- **Confidence**: 0.90 (high match score)
-- **Memory**: "Only matching PO for vendor within 30 days and matching item WIDGET-002"
-- **Status**: ✅ Working - Learned from human approval of INV-A-003
-
-### ✅ Criterion 3: Parts AG - VAT Detection & Tax Recomputation
-- **Implementation**: Detects "MwSt. inkl." and "Prices incl. VAT" keywords
-- **Result**: INV-B-001 triggers tax recalculation (2380 EUR gross)
-- **Detected**: `vatIncluded: true, percentage: 19%`
-- **Memory**: Two memories for grossTotal and taxTotal corrections (confidence 0.95)
-- **Status**: ✅ Working - Correctly identifies VAT-inclusive invoices
-
-### ✅ Criterion 4: Parts AG - Missing Currency Recovery
-- **Implementation**: Extracts currency patterns (EUR, USD, GBP, CHF, JPY)
-- **Result**: Recovers "EUR" from rawText when currency field missing
-- **Pattern**: Scans raw invoice text for currency indicators
-- **Memory**: Stored as "Currency appears in rawText" pattern
-- **Status**: ✅ Working - All invoices recover EUR currency
-
-### ✅ Criterion 5: Freight & Co - Skonto Term Detection
-- **Implementation**: Extracts "X% within Y days" discount patterns
-- **Result**: INV-C-001 detects "2% Skonto within 10 days"
-- **Stored**: Pattern memory with `confidence: 0.8` for vendor-specific terms
-- **Memory**: Prevents repeated questions about discount conditions
-- **Status**: ✅ Working - Detects and remembers vendor discount policies
-
-### ✅ Criterion 6: Freight & Co - Seefracht → FREIGHT SKU Mapping
-- **Implementation**: Maps shipping descriptions to standard SKU
-- **Result**: "Seefracht / Shipping" → SKU "FREIGHT"
-- **Confidence**: 0.95 (high confidence description match)
-- **Memory**: Stored with pattern "Vendor uses descriptions (Seefracht/Shipping)"
-- **Status**: ✅ Working - Auto-maps freight-related line items
-
-### ✅ Criterion 7: Duplicate Detection (INV-A-004 vs INV-A-003)
-- **Implementation**: Detects same vendor + invoiceNumber within 5-day window
-- **Result**: INV-A-004 flagged as duplicate of INV-A-003 (both INV-2024-003)
-- **Detection**: Same vendor "Supplier GmbH", invoice dates 25-26 Jan 2024
-- **Outcome**: Escalated to `requires-review` (never auto-approved)
-- **Bug Fixed**: Duplicate detection now correctly stores full invoice metadata
-- **Status**: ✅ Working - Prevents double payments and memory corruption
-
 ### Confidence Evolution
 - **Reinforcement**: Hits++ when human approves (confidence increases)
 - **Decay**: Misses++ when human rejects (confidence decreases)
@@ -553,4 +501,4 @@ Assignment: Memory-Driven Learning Layer for Invoice Automation
 
 ## License
 
-ISC
+MIT
